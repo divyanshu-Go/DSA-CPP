@@ -3,7 +3,8 @@
 using namespace std;
 
 
-void Insertion(){
+void Find_MinMax()
+{
     int n ;
     int max=INT_MIN;
     int min=INT_MAX;
@@ -42,7 +43,7 @@ void Insertion(){
 
 int main(){
 
-    Insertion();
+    Find_MinMax();
 
     return 0;
 }
