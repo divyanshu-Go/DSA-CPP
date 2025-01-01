@@ -18,6 +18,7 @@ void majorityElement(vector<int>& arr){
         }
         else{
             ans=arr[i];
+            freq=1; 
         }
     }
     
