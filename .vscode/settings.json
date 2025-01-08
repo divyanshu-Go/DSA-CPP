@@ -3,7 +3,8 @@
         "initializer_list": "cpp",
         "iostream": "cpp",
         "cmath": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
