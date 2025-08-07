@@ -5,19 +5,20 @@ using namespace std;
 
 
 class Node{
+public:
     int data;
     Node* left;
     Node* right;
 
-    void Node(int val){
+    Node(int val){
         data=val;
         left=right=NULL;
     }
-}
+};
 
 
-static int idx = -1;
-class buildTree(vector<int> preorder){
+int idx = -1;
+Node* buildTree(vector<int>& preorder){
     idx++;
     if(preorder[idx] == -1) return NULL;
 

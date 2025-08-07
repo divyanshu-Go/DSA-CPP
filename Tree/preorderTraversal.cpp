@@ -5,30 +5,32 @@ using namespace std;
 
 
 class Node{
+public:
     int data;
     Node* left;
     Node* right;
 
-    void Node(int val){
+    Node(int val){
         data=val;
         left=right=NULL;
     }
-}
+};
 
 
-static int idx = -1;
-class buildTree(vector<int> preorder){
+
+Node* buildTree(vector<int> preorder, int& idx){
     idx++;
     if(preorder[idx] == -1) return NULL;
 
     Node* root = new Node(preorder[idx]);
-    root->left = buildTree(preorder);
-    root->right = buildTree(preorder);
+    root->left = buildTree(preorder, idx);
+    root->right = buildTree(preorder, idx);
 
     return root;
 }
 
-void prerder(Node* root){
+
+void preorder(Node* root){
     if(root == NULL){
         return;
     }
@@ -40,9 +42,9 @@ void prerder(Node* root){
 
 
 int main(){
-    vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
-
-    Node* root = buildTree(preorder);
+    vector<int> preorderTree = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
+    int idx = -1;
+    Node* root = buildTree(preorderTree, idx);
     cout <<  root->data <<endl;
     cout << root->left->data << endl;
     cout << root->right->data << endl;
